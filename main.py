@@ -232,15 +232,6 @@ def call_agent(state: AgentState) -> AgentState:
 
 def should_continue(state:AgentState):
     last_message = state["messages"][-1]
-    if hasattr(last_message, "tool_calls") and last_message.tool_calls:
-        print("\n" + "="*40)
-        print("🔧 TOOL CALL DETECTED!")
-        
-        for tool_call in last_message.tool_calls:
-            print(f"📌 Tool Name  : {tool_call['name']}")
-            print(f"⚙️ Parameters : {tool_call['args']}")
-            print(f"🆔 Call ID    : {tool_call['id']}")
-        print("="*40 + "\n")
     if not last_message.tool_calls:
         return "end"
     else:
