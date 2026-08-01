@@ -1,6 +1,8 @@
 # Hospital_Chatbot
 This is my project submission for devlabs final task.
 
+This project is highly inspired by freecodecamp video about Langgraph:- https://youtu.be/jGg_1h0qzaM?si=4NghvxAW8JtDqTDf
+
 This project is implementation of AI Chatbot as a real life assistant of a hospital named AMINITY. 
 
 This AI chatbot uses langgraph and has a basic RE-ACT type graph.
