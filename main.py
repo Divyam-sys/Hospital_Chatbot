@@ -39,8 +39,6 @@ for filename in os.listdir(DATA_FOLDER):
 
         documents.extend(docs)
 
-print(f"Loaded {len(documents)} documents.")
-
 #slicing
 
 text_splitter = RecursiveCharacterTextSplitter(
@@ -50,9 +48,6 @@ text_splitter = RecursiveCharacterTextSplitter(
 
 chunks = text_splitter.split_documents(documents)
 
-print(f"Created {len(chunks)} chunks.")
-print(len(documents))
-print(len(chunks))
 #vector database
 vector_db = Chroma.from_documents(
     documents=chunks,
