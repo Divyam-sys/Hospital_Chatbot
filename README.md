@@ -90,6 +90,8 @@ Agent:- Your appointment has been successfully cancelled. Let me know if you nee
 ###########################################################################################
 That is all from my side.
 
+Update:- Embedded secret is the otp for patients.
+
 
 
 
