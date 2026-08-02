@@ -15,7 +15,7 @@ Packages to install:-
 5.langchain_chroma:-pip install langchain-chroma
 6.langchain_text_splitters:- pip install langchain-text-splitter
 
-To install packages run these following commands on the right on your terminal where the main.py file is located.
+To install packages run these following commands on the right on your terminal where the main.py file is located or run pip install -r requirements.txt
 
 Requirements:-
 Google GenAI API keys:- One can obtain these for free in Google Studios for free of cost and paste it in places where it is written "your-api-key".
