@@ -252,14 +252,19 @@ graph.add_edge("tools","my_agent")
 app=graph.compile()
 
 def running_agent():
+    chat_history=[]
     print("\n===AMINITY AI ===")
     print("HOW MAY I HELP YOU TODAY?")
     while True:
         user_input=input("\n User:- ")
         if user_input.lower() in ["exit","quit"]:
+            print("Thank You!!!")
             break
-        messages=[HumanMessage(content=user_input)]
-        result=app.invoke({"messages":messages})
+        if not user_input:
+            continue
+        chat_history.append(HumanMessage(content=user_input))
+        result=app.invoke({"messages":chat_history})
+        chat_history=result["messages"]
 
         print("\n=====Answer=====")
         print(result["messages"][-1].text)
