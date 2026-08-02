@@ -13,10 +13,10 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.documents import Document
 from langchain_core.prompts import ChatPromptTemplate
 from langgraph.prebuilt import ToolNode
-
+my_google_api_key="your_api_key"
 embedding=GoogleGenerativeAIEmbeddings(
     model="gemini-embedding-001",
-    api_key="your_api_key"
+    api_key=my_google_api_key
 )
 
 class AgentState(TypedDict):
@@ -197,7 +197,7 @@ tools = [query_hospital,book_appointment,manage_appointment]
 
 llm = ChatGoogleGenerativeAI(
     model="gemini-3.5-flash-lite",
-    api_key="your_api_key"
+    api_key=my_google_api_key
 ).bind_tools(tools)
 
 
