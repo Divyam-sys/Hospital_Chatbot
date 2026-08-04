@@ -1,49 +1,50 @@
-# Hospital_Chatbot
-This is my project submission for devlabs final task.
+# 🏥 Hospital Chatbot (AMINITY Hospital)
 
-This project is highly inspired by freecodecamp video about Langgraph:- https://youtu.be/jGg_1h0qzaM?si=4NghvxAW8JtDqTDf
+> **DevLabs Final Project Submission**  
+> An intelligent real-life assistant for **AMINITY Hospital**, powered by **LangGraph** and **Google Gemini AI**.
 
-This project is implementation of AI Chatbot as a real life assistant of a hospital named AMINITY. 
+---
 
-This AI chatbot uses langgraph and has a basic RE-ACT type graph.
+## 📌 Overview
 
-Packages to install:-
-1.langgraph:- pip install -U langgraph
-2.langchaim_core:- pip install langchain-core
-3.langchain_google_genai:- pip install langchain-google-genai
-4.langchain_community:- pip install langchain-community
-5.langchain_chroma:-pip install langchain-chroma
-6.langchain_text_splitters:- pip install langchain-text-splitter
+This project implements an AI-driven hospital assistant designed to manage patient queries, book and cancel appointments, and navigate hospital schedules using a **Re-Act agent graph**. 
 
-To install packages run these following commands on the right on your terminal where the main.py file is located or run pip install -r requirements.txt
+The implementation is highly inspired by the [FreeCodeCamp LangGraph Tutorial](https://youtu.be/jGg_1h0qzaM?si=4NghvxAW8JtDqTDf).
 
-Requirements:-
-Google GenAI API keys:- One can obtain these for free in Google Studios for free of cost and paste it in places where it is written "your-api-key".
+---
 
-The data files should be exactly how it is in repo, i.e., in a folder named data which is in the same folder main.py is in.
+## ✨ Features
 
-A stable Internet Connection is really important for API calling.
+* **⚡ Re-Act Agent Architecture:** Built using **LangGraph** for structured reasoning and action execution.
+* **🔍 Contextual Knowledge Base:** Vectorized context from 6 static knowledge files using **LangChain Chroma** and **Gemini Embeddings**.
+* **📅 Appointment Management:** Interactive booking and cancellation system using patient verification OTPs.
+* **🚀 Fast & Efficient Execution:** Optimized using **Gemini-3.5-flash-lite** to maximize tokens per minute (TPM) on free-tier Google AI Studio accounts.
 
-About The Project:-
+---
 
-This project is about an AI Agent which helps in booking appointments, managing them and most importantly about any queries that an user throws about the hospital.
+## ⚙️ Requirements & Dependencies
 
-The AI take help of 7 text files, 6 of which are non-changing while 1 is for appointment of patients.
+### Prerequisites
+1. **Google GenAI API Key:** Obtain a free API key from [Google AI Studio](https://aistudio.google.com/) and replace `"your-api-key"` in the script.
+2. **Directory Structure:** Ensure the `data/` directory (containing all 7 `.txt` files) is placed in the same folder as `main.py`.
+3. **Internet Connection:** Stable connection required for live API calls.
 
-I am using Gemini Embedding AI (Gemini Embedding 1) as embedder. I used langchain chroma for vectorization of the following contents in 6 txt files.
+### Package Installation
 
-I splitted those long txt files into chunks so it is easy for AI to understand and also for fast API calling,
+Run the following command in the directory where `main.py` is located:
 
-In retriever part, the similarity is set to be atmost 3 as it is not a big text file.
+```bash
+pip install -r requirements.txt
+or install the [packages individually
+pip install -U langgraph
+pip install langchain-core
+pip install langchain-google-genai
+pip install langchain-community
+pip install langchain-chroma
+pip install langchain-text-splitter
 
-Three tools are defined with proper explanation of what they do in the comments for both the reader and AI agent to understand.
-
-I have used Gemini-3.5-flash-lite as in free version of google studios, it has maximum tokens per minute.
-
-After all the nodes and edges are initialized, a function is defined to ask the user and reply.
-
-Sample Run Tests:-
-#########################################################################################
+Sample test cases:-
+1.
 User:-I have a very bad knee problem and I want to check if there is any specialist doctor here at the hospital?
 
 AI Agent:-Yes, we do have a specialist for knee problems! 
@@ -54,7 +55,7 @@ AI Agent:-Yes, we do have a specialist for knee problems!
 
 Would you like me to help you book an appointment with Dr. Patel?
 
-##########################################################################################
+2.
 User:-  I have heart problem since I was 5, and my nanny used to say to visit a doctor. My name is Vaibhav and I am now 19 years old. Can you tell me when are they available and if I can book an appointment?
 
 Agent:- Hello Vaibhav! It's great that you are taking charge of your health. 
@@ -85,24 +86,10 @@ Here are the details:
 * **Booking OTP:** 378023 *(Please save this OTP in case you need to modify or cancel your appointment later.)*
 
 Take care, and we look forward to seeing you!
-#########################################################################################
+
+3.
 User:- Can you cancel my appointment with Dr Marcus. My name is Vaibhav and my otp is 378023.
 
 Agent:- Your appointment has been successfully cancelled. Let me know if you need help with anything else!
-###########################################################################################
-That is all from my side.
-
-Update:- Embedded secret is the otp for patients.
-
-
-
-
-
-
-
-
-
-
-
 
 
